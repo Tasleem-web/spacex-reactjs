@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Banner from './components/Banner';
+import Header from './components/Header';
+import LandingPage from './components/LandingPage';
+import Search from './components/Search';
+import { useSelector } from 'react-redux'
+import React from 'react';
 
 function App() {
+  const capsuleState = useSelector(state => state.capsuleData) || [];
+  console.log(capsuleState);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Banner />
+      <Search />
+      <LandingPage data={capsuleState} />
+    </>
   );
 }
 
