@@ -31,7 +31,7 @@ export default function LandingPage({ data }) {
             {
                 (data.capsuleData && data.capsuleData.length > 0) ?
                     <>
-                        <CardGrid currentTableData={data.capsuleData} />
+                        <CardGrid currentTableData={currentTableData} />
                         <Pagination
                             className="pagination-bar"
                             currentPage={currentPage}
