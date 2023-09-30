@@ -8,7 +8,6 @@ import React from 'react';
 
 function App() {
   const capsuleState = useSelector(state => state.capsuleData) || [];
-  console.log(capsuleState);
 
   return (
     <>

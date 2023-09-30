@@ -8,7 +8,7 @@ let PageSize = 10;
 
 export default function LandingPage({ data }) {
     const [currentPage, setCurrentPage] = useState(1);
-    const [capsulesData] = useFetch("https://api.spacexdata.com/v3/capsules")
+    const [capsulesData] = useFetch("https://api.spacexdata.com/v3/capsules");
 
 
     const currentTableData = useMemo(() => {
@@ -28,16 +28,14 @@ export default function LandingPage({ data }) {
 
     return (
         <>
-            {JSON.stringify(currentPage)}
             {
                 (data.capsuleData && data.capsuleData.length > 0) ?
                     <>
                         <CardGrid currentTableData={data.capsuleData} />
-                        Test1
                         <Pagination
                             className="pagination-bar"
                             currentPage={currentPage}
-                            totalCount={capsulesData.length}
+                            totalCount={data.capsuleData.length}
                             pageSize={PageSize}
                             onPageChange={page => setCurrentPage(page)}
                         />

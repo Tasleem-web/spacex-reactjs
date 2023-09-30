@@ -7,7 +7,7 @@ export default function Search() {
 
     const dispatch = useDispatch();
 
-    const [type, bindType] = useInput('');
+    const [type, bindType] = useInput('status');
     const [searchBy, bindSearchBy] = useInput('');
 
     const onClickButton = (event) => {
@@ -26,8 +26,7 @@ export default function Search() {
                 </div>
                 <div className="grid md:grid-cols-2 md:gap-6">
                     <div className="select relative z-0 w-full mb-6 group">
-                        <select className='select' id="format" {...bindType}>
-                            <option value="none" defaultValue="none" disabled>choose...</option>
+                        <select className='select' {...bindType} defaultValue={'status'}>
                             <option value="status">Status</option>
                             <option value="original_launch">Original Launch</option>
                             <option value="type">Type</option>
